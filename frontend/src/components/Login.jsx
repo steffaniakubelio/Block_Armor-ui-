@@ -19,7 +19,6 @@ function Login() {
     try {
       const response = await axios.post('http://localhost:3001/login', { email, password });
       localStorage.setItem('token', response.data.token);
-      // Redirect to input page upon successful login
       window.location.href = '/home';
     } catch (error) {
       if (error.response && error.response.status === 401) {
